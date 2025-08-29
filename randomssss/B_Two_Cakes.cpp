@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<ll> vl;
+
+#define PB push_back
+#define F first
+#define S second
+#define MP make_pair
+#define endl '\n'
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(a) (a).begin(),(a).end()
+
+#define mid(l,r) ((r+l)/2)
+#define mx_int_prime 999999937
+
+const double PI = acos(-1);
+
+#define mem(a,b) memset(a, b, sizeof(a) )
+#define GCD(a,b) __gcd(a,b)
+#define LCM(a,b) ((a)/__gcd(a,b))*b
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+int dx[] = {0, 0, +1, -1};
+int dy[] = {+1, -1, 0, 0};
+//int dx[] = {+1, 0, -1, 0, +1, +1, -1, -1};
+//int dy[] = {0, +1, 0, -1, +1, -1, +1, -1};
+
+
+// ceil value x = (n+(m-1))/m
+
+void solve(){
+    int n,c,d;
+    cin>>n>>c>>d;
+    if((c+d)==n)cout<<"1";
+    else if(n==c&&n==d){
+        if(n%2==0)cout<<"2";
+        else cout<<"1";
+    }
+    else{
+        int ans=1;
+       for(int i=min(c,d);i>=0;i--){
+        int a=c/i,b=d/i;
+        if(a+b>=n){
+            ans=i;
+            break;
+        }
+       }
+       cout<<ans;
+    }
+}
+int main() {
+    optimize();
+    int t=1;
+    for(ll cs = 1; cs <= t; cs++){
+     // cout << "Case " << cs << ": ";
+        solve();
+    }
+    return 0;
+}
